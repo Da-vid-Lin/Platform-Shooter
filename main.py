@@ -26,29 +26,29 @@ Fps = 60
 Gravity = 0.75
 
 #Music constants
-track0 = "courswork/music/menu.mp3"
-track1 = "courswork/music/map1.mp3"
-track2 = "courswork/music/map2.mp3"
-track3 = "courswork/music/map3.mp3"
+track0 = "Music/menu.mp3"
+track1 = "Music/map1.mp3"
+track2 = "Music/map2.mp3"
+track3 = "Music/map3.mp3"
 
 #Soundeffect constants
-playerhit = pygame.mixer.Sound("courswork/soundeffects/playerhit.mp3")
-deathsound = pygame.mixer.Sound("courswork/soundeffects/deathsound.mp3")
-menuclick = pygame.mixer.Sound("courswork/soundeffects/menuclick.mp3")
-shoot = pygame.mixer.Sound("courswork/soundeffects/shoot.mp3")
+playerhit = pygame.mixer.Sound("Sound/playerhit.mp3")
+deathsound = pygame.mixer.Sound("Sound/deathsound.mp3")
+menuclick = pygame.mixer.Sound("Sound/menuclick.mp3")
+shoot = pygame.mixer.Sound("Sound/shoot.mp3")
 
 sounds = [playerhit, deathsound, menuclick, shoot]
 
 #Backgrounds constants
-menubg = pygame.transform.scale(pygame.image.load("courswork/background/menubg.jpg"), (1280,720))
-optionsbg = pygame.transform.scale(pygame.image.load("courswork/background/optionsbg.webp"), (1280,720))
-controlsbg = pygame.transform.scale(pygame.image.load("courswork/background/controlsbg.png"), (1280,720))
-gunbg = pygame.transform.scale(pygame.image.load("courswork/background/gunbg.jpg"), (1280,720))
-mapsbg = pygame.transform.scale(pygame.image.load("courswork/background/mapsbg.png"), (1280,720))
-map1bg = pygame.transform.scale(pygame.image.load("courswork/background/map1bg.webp"), (1280,720))
-map2bg = pygame.transform.scale(pygame.image.load("courswork/background/map2bg.png"), (1280,720))
-map3bg = pygame.transform.scale(pygame.image.load("courswork/background/map3bg.webp"), (1280,720))
-overbg = pygame.transform.scale(pygame.image.load("courswork/background/overbg.jpg"), (1280,720))
+menubg = pygame.transform.scale(pygame.image.load("Background/menubg.jpg"), (1280,720))
+optionsbg = pygame.transform.scale(pygame.image.load("Background/optionsbg.webp"), (1280,720))
+controlsbg = pygame.transform.scale(pygame.image.load("Background/controlsbg.png"), (1280,720))
+gunbg = pygame.transform.scale(pygame.image.load("Background/gunbg.jpg"), (1280,720))
+mapsbg = pygame.transform.scale(pygame.image.load("Background/mapsbg.png"), (1280,720))
+map1bg = pygame.transform.scale(pygame.image.load("Background/map1bg.webp"), (1280,720))
+map2bg = pygame.transform.scale(pygame.image.load("Background/map2bg.png"), (1280,720))
+map3bg = pygame.transform.scale(pygame.image.load("Background/map3bg.webp"), (1280,720))
+overbg = pygame.transform.scale(pygame.image.load("Background/overbg.jpg"), (1280,720))
 
 
 pygame.mixer.music.load(track0)
@@ -187,7 +187,7 @@ class Bullet(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.screen = screen
         self.speed = speed
-        bullet_img = pygame.image.load("courswork/images/bulletimage.png")
+        bullet_img = pygame.image.load("Images/bulletimage.png")
         self.image = pygame.transform.scale(bullet_img, (20,20))
         self.image = pygame.transform.rotate(self.image, 90)
         self.direction = 1
@@ -453,9 +453,9 @@ class MainGame:
 
         #images - gun name - total bullets - bullet strength - reload time - bullet speed
 
-        O = [["courswork/images/pistolman.png","Pistol",6,30,90,12],
-             ["courswork/images/assaultrifleman.png","Assault",20,20,100,8],
-             ["courswork/images/sniperman.png","Sniper",1,80,150,50]]
+        O = [["Images/pistolman.png","Pistol",6,30,90,12],
+             ["Images/assaultrifleman.png","Assault",20,20,100,8],
+             ["Images/sniperman.png","Sniper",1,80,150,50]]
 
         PlayerImage = pygame.image.load(O[self.playerchoice][0])
         PlayerImage = pygame.transform.scale(PlayerImage, (80,80))
@@ -539,15 +539,15 @@ class MainGame:
         Map3.hovered()
         Map3.draw()
         
-        MapImage1 = pygame.image.load("courswork/images/map1.png")
+        MapImage1 = pygame.image.load("Images/map1.png")
         MapImage1 = pygame.transform.scale(MapImage1, (320,180))
         self.screen.blit(MapImage1,(480-400,180))
 
-        MapImage2 = pygame.image.load("courswork/images/map2.png")
+        MapImage2 = pygame.image.load("Images/map2.png")
         MapImage2 = pygame.transform.scale(MapImage2, (320,180))
         self.screen.blit(MapImage2,(480,180))
 
-        MapImage3 = pygame.image.load("courswork/images/map3.png")
+        MapImage3 = pygame.image.load("Images/map3.png")
         MapImage3 = pygame.transform.scale(MapImage3, (320,180))
         self.screen.blit(MapImage3,(480+400,180))
 
